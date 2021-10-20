@@ -21,14 +21,21 @@ class Player(World, Foundation):
 
         if self.endurance <= 0:
             Death = True
-            breathe = False
 
         if Death:
             return 'You have died'
-            breathe = False
+
         else:
             return self.endurance
 
+    def damage(self, strength):
+        strength = self.strength
+        Punch = True
+        if Punch:
+            strength *= 2
+        return strength
 
-Player1 = Player('K1', 49, 12, 3, 25, 100, 49, 55)
+
+Player1 = Player('K1', 9, 12, 3, 25, 100, 49, 55)
 print(Player1.endurance_test())
+print(Player1.damage(0))
